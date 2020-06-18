@@ -3,7 +3,7 @@
         <div class="crumbs">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item>
-                    <i class="el-icon-fa fa-edit"></i> 学生作业列表
+                    <i class="el-icon-fa fa-check"></i> 学生作业列表
                 </el-breadcrumb-item>
             </el-breadcrumb>
         </div>
@@ -11,7 +11,7 @@
         <div class="container">
             <div class="query-form">
                 <el-row :gutter="20">
-                    <el-col :offset="15" :span="3">
+                    <el-col :offset="9" :span="3">
                         <el-input @keyup.enter.native="query" placeholder="作业编号" v-model="queryForm.homeworkId"/>
                     </el-col>
                     <el-col :span="3">

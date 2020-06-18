@@ -14,7 +14,7 @@
                     <el-col :span="2">
                         <el-button @click="create" icon="el-icon-plus">发布作业</el-button>
                     </el-col>
-                    <el-col :offset="10" :span="3">
+                    <el-col :offset="13" :span="3">
                         <el-input @keyup.enter.native="query" placeholder="作业编号" v-model="queryForm.homeworkId"/>
                     </el-col>
                     <el-col :span="3">
