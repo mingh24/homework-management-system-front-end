@@ -74,9 +74,8 @@
                         if (this.formData.repeatPassword !== this.formData.password) {
                             this.$message.error("两次密码输入不一致！");
                         } else {
-                            register(this.formData.userId, this.formData.username, md5(this.formData.password + md5(this.formData.userId)), this.formData.userType).then(res => {
-                                this.$message.success("注册成功：" + res.username);
-                                this.$store.commit("register", res);
+                            register(this.formData.userId, this.formData.username, md5(this.formData.password + md5(this.formData.userId)), this.formData.userType).then(() => {
+                                this.$message.success("注册成功");
                                 this.$router.push({name: "login"});
                             });
                         }
