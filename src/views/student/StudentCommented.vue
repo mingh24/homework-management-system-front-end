@@ -3,7 +3,7 @@
         <div class="crumbs">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item>
-                    <i class="el-icon-fa fa-check"></i> 老师已点评的作业
+                    <i class="el-icon-fa fa-thumbs-up"></i> 老师已点评的作业
                 </el-breadcrumb-item>
             </el-breadcrumb>
         </div>

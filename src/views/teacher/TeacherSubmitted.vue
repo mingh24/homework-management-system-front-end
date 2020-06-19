@@ -73,7 +73,7 @@
             </div>
 
             <el-dialog :visible.sync="editing" title="编辑" width="50%">
-                <el-form :model="entityForm" label-width="100px" ref="form">
+                <el-form :model="entityForm" label-width="96px" ref="form">
                     <el-form-item label="学生作业编号">
                         <el-input disabled type="number" v-model="entityForm.studentHomeworkId"></el-input>
                     </el-form-item>

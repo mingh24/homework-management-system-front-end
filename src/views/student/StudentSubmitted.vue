@@ -51,7 +51,6 @@
                     <el-table-column label="作业内容" prop="homeworkContent"/>
                     <el-table-column label="提交的标题" prop="title"/>
                     <el-table-column label="提交的内容" prop="content"/>
-                    <el-table-column label="评语" prop="teacherComment"/>
                     <el-table-column align="center" label="操作" width="200px">
                         <template slot-scope="scope">
                             <el-button @click="editStudentHomework(scope.row.homeworkId)"
@@ -64,8 +63,8 @@
                 </el-table>
             </div>
 
-            <el-dialog :visible.sync="editing" title="编辑" width="30%">
-                <el-form :model="entityForm" label-width="70px" ref="form">
+            <el-dialog :visible.sync="editing" title="编辑" width="50%">
+                <el-form :model="entityForm" label-width="82px" ref="form">
                     <el-form-item label="作业编号">
                         <el-input disabled type="number" v-model="entityForm.homeworkId"></el-input>
                     </el-form-item>
@@ -80,9 +79,6 @@
                     </el-form-item>
                     <el-form-item label="提交的内容">
                         <el-input type="textarea" v-model="entityForm.content"></el-input>
-                    </el-form-item>
-                    <el-form-item label="评语">
-                        <el-input disabled type="textarea" v-model="entityForm.teacherComment"></el-input>
                     </el-form-item>
                 </el-form>
                 <span class="dialog-footer" slot="footer">

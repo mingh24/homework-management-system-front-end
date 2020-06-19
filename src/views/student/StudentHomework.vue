@@ -60,8 +60,8 @@
                 </el-table>
             </div>
 
-            <el-dialog :visible.sync="editing" title="编辑" width="30%">
-                <el-form :model="entityForm" label-width="70px" ref="form">
+            <el-dialog :visible.sync="editing" title="编辑" width="50%">
+                <el-form :model="entityForm" label-width="82px" ref="form">
                     <el-form-item label="作业编号">
                         <el-input disabled type="number" v-model="entityForm.homeworkId"></el-input>
                     </el-form-item>
