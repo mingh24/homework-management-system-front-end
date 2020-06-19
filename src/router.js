@@ -8,6 +8,7 @@ import StudentHomework from "@/views/student/StudentHomework";
 import StudentSubmitted from "@/views/student/StudentSubmitted";
 import TeacherHomework from "@/views/teacher/TeacherHomework";
 import TeacherSubmitted from "@/views/teacher/TeacherSubmitted";
+import StudentCommented from "@/views/student/StudentCommented";
 
 Vue.use(VueRouter);
 
@@ -31,6 +32,11 @@ const routes = [
                 path: "/student/submitted",
                 name: "student-submitted",
                 component: StudentSubmitted
+            },
+            {
+                path: "/student/commented",
+                name: "student-commented",
+                component: StudentCommented
             },
             {
                 path: "/teacher",

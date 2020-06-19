@@ -22,6 +22,12 @@ SideBarItem.items = [
         userType: UserType.student
     },
     {
+        icon: "el-icon-fa fa-thumbs-up",
+        index: "/student/commented",
+        title: "老师已点评的作业",
+        userType: UserType.student
+    },
+    {
         icon: "el-icon-fa fa-home",
         index: "/teacher",
         title: "教师首页",
