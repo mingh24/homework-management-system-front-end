@@ -14,4 +14,4 @@ export const getPage = (index, homeworkId, homeworkTitle) => axios.get("/student
     homeworkTitle: homeworkTitle
 });
 
-export const pageSize = 20;
+export const pageSize = 7;
