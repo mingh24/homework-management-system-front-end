@@ -2,7 +2,7 @@ import * as axios from "@/common/myAxios";
 
 export const updateStudentHomework = studentHomework => axios.put("/student/submitted", studentHomework);
 
-export const getStudentHomework = homeworkId => axios.get("/student/submitted", homeworkId);
+export const getStudentHomework = homeworkId => axios.get("/student/submitted/" + homeworkId);
 
 export const getPageCount = (homeworkId, homeworkTitle) =>
     axios.get("/student/submitted/page/count", {

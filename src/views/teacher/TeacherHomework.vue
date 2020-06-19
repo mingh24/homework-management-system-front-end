@@ -15,7 +15,8 @@
                         <el-button @click="create" icon="el-icon-plus">发布作业</el-button>
                     </el-col>
                     <el-col :offset="13" :span="3">
-                        <el-input @keyup.enter.native="query" placeholder="作业编号" v-model="queryForm.homeworkId"/>
+                        <el-input @keyup.enter.native="query" onkeyup="value=value.replace(/[^\d]/g,'')"
+                                  placeholder="作业编号" v-model="queryForm.homeworkId"/>
                     </el-col>
                     <el-col :span="3">
                         <el-input @keyup.enter.native="query" placeholder="作业标题" v-model="queryForm.homeworkTitle"/>
@@ -53,7 +54,8 @@
                     <el-table-column label="作业内容" prop="homeworkContent"/>
                     <el-table-column align="center" label="操作" width="200px">
                         <template slot-scope="scope">
-                            <el-button @click="editHomework(scope.row.homeworkId)" size="mini" type="success">编辑</el-button>
+                            <el-button @click="editHomework(scope.row.homeworkId)" size="mini" type="success">编辑
+                            </el-button>
                             <el-button @click="deleteHomework(scope.row.homeworkId)" size="mini" type="danger">删除
                             </el-button>
                         </template>
@@ -69,8 +71,8 @@
                     <el-form-item label="作业标题">
                         <el-input v-model="entityForm.homeworkTitle"></el-input>
                     </el-form-item>
-                    <el-form-item label="上课地点">
-                        <el-input v-model="entityForm.homeworkContent"></el-input>
+                    <el-form-item label="作业内容">
+                        <el-input type="textarea" v-model="entityForm.homeworkContent"></el-input>
                     </el-form-item>
                 </el-form>
                 <span class="dialog-footer" slot="footer">
@@ -116,6 +118,7 @@
             },
             create() {
                 this.entityForm = {
+                    homeworkId: "",
                     homeworkTitle: "",
                     homeworkContent: ""
                 };
@@ -128,7 +131,7 @@
                 });
             },
             save() {
-                if (this.entityForm.homeworkId === -1) {
+                if (this.entityForm.homeworkId === "") {
                     homeworkApi.addHomework(this.entityForm).then(() => {
                         this.finishSave();
                     });

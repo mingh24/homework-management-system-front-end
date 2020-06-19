@@ -4,7 +4,7 @@
             <div class="form-title">作业管理系统</div>
             <el-form ref="form" :model="formData" :rules="rules" class="form-content" label-width="0px">
                 <el-form-item prop="userId">
-                    <el-input placeholder="学号/工号" v-model="formData.userId">
+                    <el-input onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="学号/工号" v-model="formData.userId">
                         <span slot="prepend"><i class="el-icon-user"></i></span>
                     </el-input>
                 </el-form-item>
@@ -44,7 +44,7 @@
     import md5 from 'js-md5';
 
     export default {
-        name:"Login",
+        name: "Login",
         data() {
             return {
                 formData: {

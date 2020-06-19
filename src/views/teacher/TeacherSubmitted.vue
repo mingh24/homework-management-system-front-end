@@ -12,13 +12,15 @@
             <div class="query-form">
                 <el-row :gutter="20">
                     <el-col :offset="9" :span="3">
-                        <el-input @keyup.enter.native="query" placeholder="作业编号" v-model="queryForm.homeworkId"/>
+                        <el-input @keyup.enter.native="query" onkeyup="value=value.replace(/[^\d]/g,'')"
+                                  placeholder="作业编号" v-model="queryForm.homeworkId"/>
                     </el-col>
                     <el-col :span="3">
                         <el-input @keyup.enter.native="query" placeholder="作业标题" v-model="queryForm.homeworkTitle"/>
                     </el-col>
                     <el-col :span="3">
-                        <el-input @keyup.enter.native="query" placeholder="学生学号" v-model="queryForm.studentId"/>
+                        <el-input @keyup.enter.native="query" onkeyup="value=value.replace(/[^\d]/g,'')"
+                                  placeholder="学生学号" v-model="queryForm.studentId"/>
                     </el-col>
                     <el-col :span="3">
                         <el-input @keyup.enter.native="query" placeholder="学生姓名" v-model="queryForm.studentName"/>
@@ -70,8 +72,8 @@
                 </el-table>
             </div>
 
-            <el-dialog :visible.sync="editing" title="编辑" width="30%">
-                <el-form :model="entityForm" label-width="70px" ref="form">
+            <el-dialog :visible.sync="editing" title="编辑" width="50%">
+                <el-form :model="entityForm" label-width="100px" ref="form">
                     <el-form-item label="学生作业编号">
                         <el-input disabled type="number" v-model="entityForm.studentHomeworkId"></el-input>
                     </el-form-item>
@@ -151,7 +153,7 @@
             },
             save() {
                 submittedApi.updateStudentHomework(this.entityForm).then(() => {
-                    this.$message.success("成功");
+                    this.$message.success("点评成功");
                     this.getPage(this.pageIndex);
                     this.editing = false;
                 });

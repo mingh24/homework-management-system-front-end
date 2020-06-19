@@ -12,7 +12,8 @@
             <div class="query-form">
                 <el-row :gutter="20">
                     <el-col :offset="15" :span="3">
-                        <el-input @keyup.enter.native="query" placeholder="作业编号" v-model="queryForm.homeworkId"/>
+                        <el-input @keyup.enter.native="query" onkeyup="value=value.replace(/[^\d]/g,'')"
+                                  placeholder="作业编号" v-model="queryForm.homeworkId"/>
                     </el-col>
                     <el-col :span="3">
                         <el-input @keyup.enter.native="query" placeholder="作业标题" v-model="queryForm.homeworkTitle"/>
