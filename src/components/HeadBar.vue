@@ -4,7 +4,7 @@
             <i class="el-icon-fa"></i>
         </div>
 
-        <div class="title">选课系统</div>
+        <div class="title">作业管理系统</div>
 
         <div class="head-right">
             <div class="head-user-area">
