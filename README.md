@@ -1,4 +1,6 @@
 # homework-management-system-front-end
+博客地址：[JavaEE 笔记03：基于Vue，SpringBoot的前后端分离的简单作业管理系统](https://blog.csdn.net/Yiang0/article/details/106863440)
+
 作业管理系统的前端部分，后端仓库地址为：[homework-management-system-back-end](https://github.com/Yi1275432232/homework-management-system-back-end)
 
 系统比较简单，前端主要基于Vue。
