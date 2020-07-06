@@ -27,9 +27,9 @@
         methods: {
             redirectHome(userType) {
                 if (userType === UserType.student) {
-                    this.$router.push({name: "student-homework"});
+                    this.$router.push({name: "student-home"});
                 } else if (userType === UserType.teacher) {
-                    this.$router.push({name: "teacher-homework"});
+                    this.$router.push({name: "teacher-home"});
                 }
             }
         },
@@ -38,10 +38,10 @@
                 this.$store.commit("login", res);
                 if (!res.loggedIn) {
                     this.$router.push({name: "login"});
-                } else if (this.$router.path === "/") {
+                } else if (this.$route.path === "/") {
                     this.redirectHome(res.userType);
                 }
-            })
+            });
         }
     };
 </script>
